@@ -1,0 +1,138 @@
+:root {
+  --canvas-default-height: 300px;
+  --trex-config-width: 55px;
+  --arcade-mode-initial-top-position: 35px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: black solid 1px; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+#gameContainer {
+  margin-top: 50px;
+  /* padding:180px; */
+  /* background-color:  #f1be7e; */
+
+}
+nav.navbar {
+  transition-duration: 0.2s;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border-style: hidden;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top.navbar-top {
+  background-color:  #77C9D4;
+  box-sizing: border-box;
+  /* display: none; */
+  
+}
+nav.navbar.navbar-default.navbar-fixed-top.navbar-top a {
+  color:white;
+  transition-duration: 0.3s;
+}
+nav.navbar.navbar-default.navbar-fixed-top.navbar-top a:hover {
+  color: #4e4f77;
+}
+
+
+#chrome-dino {
+  width: 100%;
+  max-width: 800px;
+  margin: 0px auto;
+  height:50vh;
+
+}
+
+#offline-resources {
+  display: none;
+}
+
+#description {
+  text-align: center;
+  padding: 0px auto;
+  margin: 0px;
+  height: 30vh;
+}
+
+body {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#graditent {
+  background-color:  rgb(245, 245, 245);
+}
+
+.offline .runner-container {
+  position: absolute;
+  width: var(--trex-config-width);
+  max-width: 800px;
+  height: 50vh;
+  overflow: hidden;
+
+}
+
+.offline .runner-canvas {
+  z-index: 10;
+  position: absolute;
+  top: calc( (50vh + -300px)/2);
+  height: 300px;
+  max-width: 800px;
+  overflow: hidden;
+  opacity: 1;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 8px 0px;
+
+}
+
+footer {
+  background-color:#444449;
+  padding: 40px;
+  height: 20vh;
+  text-align: center;
+  
+}
+
+footer p {
+  color: #eee;
+  font-size: 12px;
+  margin-top: 6px;
+}
+footer a {
+  margin: 0px 6px;
+
+}
+footer a:hover {
+  filter: brightness(.2);
+  cursor: pointer;
+}
+
+.fa .fas {
+  font-family: "Font Awesome 5 Pro";
+  width: 25px;
+  font-weight: 900;
+}
+
+img:hover{
+/* filter: grayscale(8); */
+filter: brightness(.2);
+}
+
+
+
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #444449;
+}
