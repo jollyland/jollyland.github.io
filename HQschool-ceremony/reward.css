@@ -1,0 +1,37 @@
+
+
+canvas{
+    max-width: 600px;
+    font-family: "cwTeXMing";
+  
+}
+.fullwidth {
+  width: 100%;
+  max-width: 600px;
+}
+
+
+input[type='text'], input[type='range'] {
+  width: 600px;
+}
+
+
+#pic_shower {
+    width: 40%;
+    float: left;
+}
+
+#resign_place{
+    width: 60%;
+    float: right;
+
+
+}
+
+#rewardHolder{
+    padding: 80px;
+}
+
+#someText{
+    margin-top: 200px;
+} 
