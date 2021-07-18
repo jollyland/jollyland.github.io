@@ -1,37 +1,67 @@
-
-
 canvas{
-    max-width: 600px;
+    max-width: 480px;
     font-family: "cwTeXMing";
-  
 }
-.fullwidth {
-  width: 100%;
-  max-width: 600px;
-}
-
 
 input[type='text'], input[type='range'] {
-  width: 600px;
+  width: 400px;
 }
 
 
-#pic_shower {
-    width: 40%;
-    float: left;
-}
-
-#resign_place{
+#ceremony{
+    margin: 80px auto 20px auto;
     width: 60%;
-    float: right;
-
-
+    text-align: center;
 }
+nav.navbar {
+    transition-duration: 0.2s;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-style: hidden;
+  }
+  
+  nav.navbar.navbar-default.navbar-fixed-top.navbar-top {
+    background-color:  #77C9D4;
+    box-sizing: border-box;
+    /* display: none; */
+    
+  }
+  nav.navbar.navbar-default.navbar-fixed-top.navbar-top a {
+    color:white;
+    transition-duration: 0.3s;
+  }
+  nav.navbar.navbar-default.navbar-fixed-top.navbar-top a:hover {
+    color: #4e4f77;
+  }
+  .content {
+      margin: 0px auto;
+  }
 
-#rewardHolder{
-    padding: 80px;
-}
+  
+footer {
+    background-color:#444449;
+    padding: 40px;
+    height: 10vh;
+    text-align: center;
+    
+  }
+  
+  footer p {
+    color: #eee;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  footer a {
+    margin: 0px 6px;
+  
+  }
+  footer a:hover {
+    filter: brightness(.2);
+    cursor: pointer;
+  }
 
-#someText{
-    margin-top: 200px;
-} 
+  
+img:hover{
+    /* filter: grayscale(8); */
+    filter: brightness(.2);
+    }
