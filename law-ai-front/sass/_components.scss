@@ -1,0 +1,251 @@
+//colors
+
+$color-primary: #4c8091;
+$color-secondary: #2f439d;
+
+$color-black: #222;
+$color-white: #eee;
+$color-dark-grey: #777;
+
+$color-light-grey-1: rgb(243, 243, 243);
+$color-light-1: #f8fbd7;
+$color-light-2: #a9dada;
+
+$color-sky: rgb(115,173,189);
+
+$color-light-orange:#ffb900;
+$color-heavy-orange:#ff7b00;
+
+//font
+$default-font-size: 1.6rem;
+
+////////////////
+#nav-main {
+    .container-border {
+        border-bottom: $color-light-grey-1 solid 1px;
+    }
+
+}
+
+////////////////header
+
+header.section_header {        
+    background-image: 
+        linear-gradient(
+        to bottom,
+        $color-sky, rgb(255, 255, 255));
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+   
+    .container {
+        padding:12rem 0;
+        
+        h1 {
+            text-shadow:  .02rem .2rem .5rem $color-dark-grey;
+        }
+        
+        hr {
+            max-width: 15rem;
+            border: solid 1px $color-secondary;
+            margin: 1.2rem auto;
+        }
+    
+        h4 {
+            color: rgb(255, 255, 255);
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+   
+    }
+
+
+
+    #btn-cal {
+        margin: 4rem;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        transition: all .3s;
+        background-color: $color-secondary;
+        color: white;
+        font-weight: 600;
+    }
+
+    #btn-cal:hover {
+        filter: brightness(.8);
+    }
+    
+}
+
+////////////////
+#section_origin {
+    padding: 3rem 0;
+    background-color: $color-secondary;
+    color: white;
+    .img{
+        background-size: cover;
+        height: 20rem;
+    }
+    h4 {
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+}
+////////////////
+
+#section_paragraph {
+    padding: 3rem 0;
+    p {
+        font-size: 1rem;
+        padding-right: 2rem;
+    }
+    .img-wrap {
+        height: 300px;
+        overflow: hidden;
+    }
+    img {
+        width: 100%;
+    }
+    h5 {
+        margin-bottom: 1rem;
+    }
+}
+
+
+////////////////
+
+#section_info {
+    background-color: $color-black;
+    color: white;
+    padding: 5rem 0;
+
+    .col-sm-5 {
+    }
+    .col-sm-7 {
+        h2 {
+            margin: 0px;
+        }
+        text-align: center;
+        i {
+            font-size: 30px;
+            margin-bottom: .5rem;
+        }
+        p {
+            padding: 0 4rem;
+        }
+    }
+}
+
+////////////////
+
+#section_future {
+    padding: 2rem 0;
+    img{
+        width: 100%;
+    }
+    i {
+        font-size: 30px;
+    }
+    .feature {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+}
+
+////////////////
+
+
+#nav-main {
+    background-color: transparent;
+    transition: all .5s;
+
+    a {
+        color:white;
+        transition: all .2s;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+
+}
+
+
+////////////Input
+.input-page {
+    max-height: 100%;
+    
+    #section_info {
+        background-color: $color-white;
+        color: black;
+
+        .form-explaination {
+            padding: 0 3rem;
+        }
+    }
+
+}
+
+
+#section-form {
+
+    background-color : $color-light-2;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    
+    hr {
+        max-width: 100%;
+        margin:2rem 1rem;
+        border: 3px solid $color-primary;
+    }
+    img{
+        width: 100%;
+    }
+    i {
+        font-size: 30px;
+    }
+    .feature {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+
+
+}
+
+#section_result {
+    padding: 6rem 0;
+    padding-bottom: 20rem;  //debug
+    background-color: #a9dada;
+    img{
+        width: 100%;
+    }
+    i {
+        font-size: 30px;
+    }
+    .feature {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+}
+
+.footer {
+    padding: 1rem 0;
+    background-color: $color-dark-grey;
+    
+    h5 {
+        margin-bottom: 1rem;
+    }
+
+    &__contest {
+        
+
+    }
+    &__links {
+        text-decoration: none;
+    }
+
+    &__copyright {
+
+    }
+}
