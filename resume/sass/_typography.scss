@@ -1,0 +1,75 @@
+%heading {
+    font-family: $font-display, $font-primary;
+    font-weight: 400;
+    margin-bottom: .4rem;
+}
+
+
+.heading-1 {
+    @extend  %heading;
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: $color-primary;
+    letter-spacing: 3px;
+}
+
+
+.heading-2 {
+    @extend  %heading;
+    font-size: 3.5rem;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: none;
+    display: inline-block;
+    transition: all .2s;
+
+    &:hover{
+        transform: translateY(-5px) scale(1.05);
+    }
+
+    
+    &--light {color:white;}
+    &--dark {color:$color-grey-dark-1;}
+}
+
+.heading-3 {
+    @extend  %heading;
+    font-size:3.5rem;
+    color:$color-primary;
+    // border-bottom: 2px solid $color-primary;
+    letter-spacing: 2px
+
+
+    
+}
+
+.heading-4 {
+    @extend  %heading;
+    font-size: 1.8rem;
+    color: white;
+    padding: .5rem 4rem ;
+    margin-bottom: .5rem;
+    background-color: $color-secondary;
+    display: inline-block;
+    position:relative;
+    border-radius: 3px 0px 0px 3px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        border-bottom: 36px solid transparent;
+        border-left: 25px solid $color-secondary;
+
+        @media only screen and (max-width:$bp-largest) {
+           display: none;
+        }
+    }
+}
+

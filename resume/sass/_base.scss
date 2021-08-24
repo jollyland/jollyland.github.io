@@ -1,0 +1,124 @@
+// COLOR VARIABLES
+$color-primary: #645dd7;
+// $color-primary-dark: #270D3A;
+
+$color-secondary: #F9C22E;
+$color-highlight: #ff4242;
+
+$color-basic:#f3f7f7;
+$color-basic-secondary:#F9D889;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #292929;
+$color-grey-dark-2: #727272;
+
+$color-purple: #669;
+
+// FONT VARIABLES
+$font-primary: 'Noto Sans TC', sans-serif;
+$font-display: 'PT Sans', sans-serif;
+
+// RWD SETTINGS
+$bp-largest: 75rem;
+$bp-large: 62.5rem;
+$bp-medium: 50rem;
+$bp-small: 37.5rem;
+
+*,
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @media only screen and (max-width:$bp-largest) {
+        font-size:50%;
+    }
+    background-color: $color-basic;
+}
+
+
+body  {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.4rem;
+    // color: ;
+}
+
+a , a:link, a:visited{
+    text-decoration: none;
+    color:inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+    // grid-template-rows: repeat(6, 40vh);
+    grid-template-columns: [sidebar-start] 6rem[sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
+
+    @media only screen and (max-width:$bp-large) {
+        // grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        // grid-template-columns: [full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];    
+    }
+    
+    
+    @media only screen and (max-width:$bp-medium) {
+        // grid-template-rows: 6rem calc(100vh - 6rem) ;
+    }
+
+}
+
+
+.sidebar {
+    grid-column: sidebar-start/sidebar-end;
+    grid-row: 1/-1;
+}
+
+header{
+    grid-column: center-start/center-end;
+
+}
+
+.education{
+    grid-column: center-start/center-end;
+}
+
+.skill_pre {
+    grid-column: full-start/center-start;
+    
+}
+.skills{
+    grid-column: center-start/center-end;
+}
+
+.skill_post {
+    grid-column: center-end/full-end;
+    
+}
+
+.projects{
+    grid-column: center-start/center-end;
+}
+
+.experience{
+    grid-column: center-start/center-end;
+}
+
+footer {
+    grid-column: full-start/full-end;
+}

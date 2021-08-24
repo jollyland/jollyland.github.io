@@ -1,0 +1,320 @@
+.nav{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+
+    &__btn {    
+        padding: 1.5rem;
+        position:relative;
+        span {
+            z-index: 10;
+            position:relative;
+        }
+    }
+    &__btn::before{
+        content: "";
+        position: absolute;
+        z-index: 5;
+        top:0;
+        left: 0;
+        height: 100%;
+        width: .5rem;
+        transform: scaleY(0);
+        background-color: $color-secondary;
+        transition: transform .2s,
+                    width .3s cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s;
+
+    }
+
+    &__btn:hover::before{
+        content: "";
+        transform: scaleY(1);
+        width: 100%;
+    }
+}
+
+
+
+.header {
+
+    padding:12rem 5rem;
+
+    @supports(display: grid){
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        // grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+        grid-gap: 4rem;
+        align-items: start;    
+    }
+
+
+    &__photo {
+        grid-column: 1 / 2;
+        width:30rem;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    &__info {
+        grid-column: 2 / 3;
+
+        display: grid;
+        row-gap: 2rem;
+
+    }
+
+    &__major {
+        margin-left: 5rem;
+    }
+
+    &__icon {
+        font-size: 2.4rem;
+        display: inline-block;
+        margin: 0 1rem;
+
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        :hover {
+            color: $color-highlight;
+            font-weight: 500;
+        }
+
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        flex:1;
+
+        &:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}
+
+
+.education {
+    padding-bottom: 10rem;
+    &__list{
+        justify-content: space-around;
+        display: flex;
+    }
+    &__details {
+        width: 30vw;
+        padding: 3rem 0rem 6rem 0rem;
+        background-color: white;
+        border-radius: 1.6rem;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        transition: all .2s;
+        
+        &:not(:last-child){
+            margin-right: 6rem;
+        }
+
+        &:hover{
+            transform: translateY(-8px);
+        }
+    }
+    &__major {
+        text-align: center;
+
+    }
+    &__school {
+        transform: translateX(-25px) ;
+        padding: .5rem 4rem .5rem 6rem ;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    &__time {
+        text-align: center;
+        color: $color-grey-dark-2;
+        font-style: italic;
+    }
+}
+
+.skills {
+    padding:10rem 0rem;
+
+    &__title{  
+        transform: translateX(-3rem);
+
+    }
+
+    &__list{
+        // display: flex;
+        // justify-content: space-evenly;
+        margin-top: 4rem;
+        
+        display: grid;
+        column-gap: 4rem;
+        grid-template-columns: repeat(3,1fr);
+        
+        &-item{
+            position:relative;
+            &:not(:last-child){
+                margin-right: 4rem;
+            }
+        }
+    }
+
+    &__skill-list{
+        color: white;
+        font-size: 2rem;
+        padding:1rem 2rem;
+        :not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__list-content{
+        font-family: $font-display,$font-primary;
+        display: flex;
+        justify-items: center;
+
+    }
+
+    &__deco{
+        position:absolute;
+
+        z-index: 0;
+        color: rgba($color-secondary, 1);
+        font-size: 8rem;
+        bottom: 0;
+        right:0;
+        transform: translate(6rem,3rem);
+    }
+
+
+
+}
+
+.projects{
+    padding:5rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    column-gap:8rem;
+    row-gap: 4rem;
+
+    &__heading{
+        grid-column: 1/-1;
+    }
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 1rem;
+    overflow: hidden;
+    
+    >:not(:last-child){
+        margin-bottom: 1.5rem;
+    }
+    
+    &__img{
+        width: 100%;
+        height: 300px;
+        margin-bottom: .5rem;
+
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__links{
+        display: flex;
+        justify-content: space-around;
+        color: white;
+
+    }
+
+    &__link{
+        background-color: $color-secondary;
+        border-radius: .8rem;
+        padding:.5rem 2rem ;
+
+        display: flex;
+        align-items: center;
+
+        transition: all .15s;
+        span {
+            margin-right: 1rem;
+        }
+        &:hover{
+            filter: brightness(.95);
+            background-color: $color-highlight;
+            transform: translateY(-5px);
+        }
+    }
+    &__intro{
+        font-size: 1.6rem;
+        padding: 0 3rem;
+        color: $color-grey-dark-1;
+    }
+    &__tool{
+
+        color: $color-primary;
+        padding: 0 3rem;
+        padding-bottom: 3rem;
+        font-weight: 600;
+    }
+}
+
+
+.experience {
+    padding: 4rem 0rem;
+    &__list{
+        justify-content: space-around;
+        display: flex;
+        padding-top: 4rem;
+    }
+    &__details{
+        background-color: white;
+        padding: 4rem;
+        box-shadow: rgba($color-secondary, 0.8) 5px 5px, rgba($color-secondary, 0.6) 10px 10px;
+        width: 30vw;
+        padding: 4rem;
+        border-radius: 1.2rem;
+
+        transition: all .2s;
+        display: flex;
+        flex-direction: column;
+        &:not(:last-child){
+            margin-right: 6rem;
+        }
+        >:not(:last-child){
+            margin-bottom: 1.2rem;
+        }
+
+        &:hover{
+            transform: translateY(-8px);
+        }
+    }
+
+    &__title{
+        font-size: 3rem;
+    }
+
+    &__intro{
+        font-size: 1.6rem;
+        padding: 0 3rem;
+        color: $color-grey-dark-1;
+    }
+
+    &__img{
+        width:80%;
+        align-self: center;
+    }
+
+}
