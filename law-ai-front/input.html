@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <script src="/JS/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
         <title>好險有買go</title>
     </head>
 
@@ -32,85 +35,43 @@
           <section id="section-form">
             <div class="container">
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                 <div class="book">
                     <div class="book__form">
-                        <form action="#" class="form">
+                        <form action="#" class="form" id="form-app">
                             <div class="u-margin-bottom-bg u-margin-top-bg">
                                 <h2 class="heading-secondary">輸入理賠金額</h2>
                             </div> 
-                            <!-- <div class="form__group">
-                                <div class="select-box">
-                                  <div class="select-box__current" tabindex="1">
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked"/>
-                                      <p class="select-box__input-text">元大人壽JR計畫1</p>
-                                    </div>
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" type="radio" id="1" value="2" name="Ben"/>
-                                      <p class="select-box__input-text">元大人壽JR計畫1</p>
-                                    </div>
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" type="radio" id="2" value="3" name="Ben"/>
-                                      <p class="select-box__input-text">元大人壽JR計畫1</p>
-                                    </div>
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" type="radio" id="3" value="4" name="Ben"/>
-                                      <p class="select-box__input-text">元大人壽JR計畫1</p>
-                                    </div>
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" type="radio" id="4" value="5" name="Ben"/>
-                                      <p class="select-box__input-text">元大人壽JR計畫1</p>
-                                    </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
-                                  </div>
-                                  <ul class="select-box__list">
-                                    <li>
-                                      <label class="select-box__option" for="0" aria-hidden="aria-hidden">元大人壽JR計畫1</label>
-                                    </li>
-                                    <li>
-                                      <label class="select-box__option" for="1" aria-hidden="aria-hidden">元大人壽JR計畫1</label>
-                                    </li>
-                                    <li>
-                                      <label class="select-box__option" for="2" aria-hidden="aria-hidden">元大人壽JR計畫1</label>
-                                    </li>
-                                    <li>
-                                      <label class="select-box__option" for="3" aria-hidden="aria-hidden">元大人壽JR計畫1</label>
-                                    </li>
-                                    <li>
-                                      <label class="select-box__option" for="4" aria-hidden="aria-hidden">元大人壽JR計畫1</label>
-                                    </li>
-                                  </ul>
-                                </div> 
-                            </div> -->
-                          <div class="form__group">
+                            <div class="form__group form__group--label">
                                 <label for="name" class="form__label">手術費</label>
-                            
-                                <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" id="large" name="size">
-                                    <label for="large" class="form__radio-label">
-                                        <span class="form__radio-button"></span>
-                                        有手術比例表
-                                    </label>
+                                <div class="form__radio-container">
+                                  <div class="form__radio-group">
+                                      <input type="radio" class="form__radio-input" id="yes" value="1" v-model = "flagSurgery">
+                                      <label for="yes" class="form__radio-label">
+                                          <span class="form__radio-button"></span>
+                                          有手術比例表
+                                      </label>
+                                  </div>
+                                  <div class="form__radio-group">
+                                      <input type="radio" class="form__radio-input" id="no" value="0" v-model = "flagSurgery" >
+                                      <label for="no" class="form__radio-label">
+                                          <span class="form__radio-button"></span>
+                                          無手術比例表
+                                      </label>
+                                  </div>
                                 </div>
-                                <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" id="small" name="size">
-                                    <label for="small" class="form__radio-label">
-                                        <span class="form__radio-button"></span>
-                                        無手術比例表
-                                    </label>
-                                </div>
                             
-                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" required>
+                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee"  :disabled="disableSurgery">
 
                             </div>
-                            <div class="form__group">
+                            <div class="form__group form__group--label">
                                 <label for="email" class="form__label">住院醫療雜費</label>
-                                <input type="email" class="form__input" placeholder="最低金額" id="email" required>
+                                <input type="email" class="form__input" placeholder="最低金額" id="email" v-model.number="medicalFee" required>
                             </div>
                             <hr/>
                             <div class="form__group">
                               <span style="font-weight: 600;">合計</span>
-                              <span class="form__total">00000元</span>
+                              <span class="form__total" >{{ total }} 元</span>
                             </div>
                             <div class="form__group">
                                 <input type="reset" class="btn u-margin-top-sm"></input>
@@ -120,8 +81,10 @@
                         </form>
                     </div>
                 </div>
+                <script src="/JS/cal.js"></script>
+
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-6">
             <img src="#" alt="圖片" class="form-pic">    
             </div>
 

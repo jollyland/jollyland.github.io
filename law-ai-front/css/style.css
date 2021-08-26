@@ -242,14 +242,47 @@ h1, h2, h3, h5, h4, h6,
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   text-shadow: .2rem 10 20;
-  border-bottom: #546c84 2px solid;
+  border-bottom: #546c84 3px solid;
 }
 
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0 1rem;
   background-color: #f8fbd7;
   border-radius: 10px;
   padding: 2rem 3rem;
+}
+
+.form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form__group--label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .form__group:not(:last-child) {
@@ -314,6 +347,20 @@ h1, h2, h3, h5, h4, h6,
   font-size: 1.5rem;
   float: right;
   color: #4c8091;
+}
+
+.form__radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .form__radio-input {

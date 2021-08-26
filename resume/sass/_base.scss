@@ -85,6 +85,7 @@ ul {
 
 
 .sidebar {
+    background-color: $color-primary;
     grid-column: sidebar-start/sidebar-end;
     grid-row: 1/-1;
 }
@@ -97,6 +98,11 @@ header{
 .education{
     grid-column: center-start/center-end;
 }
+
+.skill_pre,.skills,.skill_post {
+    background-color: $color-purple;
+}
+
 
 .skill_pre {
     grid-column: full-start/center-start;
@@ -120,5 +126,6 @@ header{
 }
 
 footer {
+    background-color: $color-basic;
     grid-column: full-start/full-end;
 }

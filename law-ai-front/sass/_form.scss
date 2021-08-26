@@ -13,7 +13,7 @@
     &:hover {
         transform: scale(1.1);
         text-shadow: .2rem 10 20;
-        border-bottom: #546c84 2px solid;
+        border-bottom: #546c84 3px solid;
     }
 }
 
@@ -22,14 +22,33 @@
 
 
 .form {
+    display: flex;
+    flex-direction: column;
+    
     margin: 0 1rem;
     background-color: $color-light-1;
     border-radius: 10px;
     padding: 2rem 3rem;
+    
+    &__group {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &--label {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+
+    }
+
     &__group:not(:last-child) {
         margin-bottom: 1rem;
     }
-
+    
+        
     &__input {
         font-size: 1.2rem;
         color: inherit;
@@ -86,16 +105,26 @@
         border-radius: 5px;
         display: block;
         font-size: 1.4rem;
-      
-    }
+
+        }
     &__total {
         font-weight: 900;
         font-size: 1.5rem;
         float: right;
         color:  $color-primary;
     }
-  
-  &__radio-input {
+
+    &__radio-container {
+        display: flex;
+        align-items: stretch;
+        
+        justify-content: space-around;
+
+        flex:1;
+    }
+
+
+    &__radio-input {
         display: none;
     }
     &__radio-group {
