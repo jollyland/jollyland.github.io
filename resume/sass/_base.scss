@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700');
+
 // COLOR VARIABLES
 $color-primary: #645dd7;
 // $color-primary-dark: #270D3A;
 
 $color-secondary: #F9C22E;
 $color-highlight: #ff4242;
+$color-blue: #4d94ff;
 
 $color-basic:#f3f7f7;
 $color-basic-secondary:#F9D889;
@@ -14,12 +17,12 @@ $color-grey-light-2: #aaa;
 $color-grey-dark-1: #292929;
 $color-grey-dark-2: #727272;
 
-$color-purple: #669;
+$color-purple: #58499a;
 
 // FONT VARIABLES
 $font-primary: 'Noto Sans TC', sans-serif;
 $font-display: 'PT Sans', sans-serif;
-
+$font-time:'Oswald';
 // RWD SETTINGS
 $bp-largest: 75rem;
 $bp-large: 62.5rem;
@@ -47,7 +50,7 @@ html {
 
 body  {
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     // color: ;
 }
 
@@ -68,19 +71,12 @@ ul {
 .container {
     display: grid;
     grid-template-rows: repeat(6, min-content);
-    // grid-template-rows: repeat(6, 40vh);
     grid-template-columns: [sidebar-start] 6rem[sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
 
-    @media only screen and (max-width:$bp-large) {
-        // grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-        // grid-template-columns: [full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];    
-    }
-    
     
     @media only screen and (max-width:$bp-medium) {
-        // grid-template-rows: 6rem calc(100vh - 6rem) ;
+        grid-template-columns: [full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
     }
-
 }
 
 
@@ -88,6 +84,20 @@ ul {
     background-color: $color-primary;
     grid-column: sidebar-start/sidebar-end;
     grid-row: 1/-1;
+    display: none;
+    @media only screen and (max-width:$bp-medium) {
+        display: flex;
+        grid-column: full-start/full-end;
+        align-content: space-between;
+        justify-content:space-evenly;
+        align-items: center;
+        height: 7rem;
+        span{
+            font-size: 4rem;
+            color:white;
+        }
+    }
+
 }
 
 header{
@@ -126,6 +136,6 @@ header{
 }
 
 footer {
-    background-color: $color-basic;
+    background-color: $color-purple;
     grid-column: full-start/full-end;
 }

@@ -10,6 +10,7 @@
         <script src="./JS/index.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 
         <title>好險有買go</title>
     </head>
@@ -40,11 +41,11 @@
                     <div class="book__form">
                         <form action="#" class="form" id="form-app">
                             <div class="u-margin-bottom-bg u-margin-top-bg">
-                                <h2 class="heading-secondary">輸入理賠金額</h2>
+                                <h2 class="heading-secondary">輸入您的保險保障方案</h2>
                             </div> 
                             <div class="form__group form__group--label">
-                                <label for="name" class="form__label">手術費</label>
-                                <div class="form__radio-container">
+                                <label for="name" class="form__label">住院醫療手術費（有手術比例表者以最高項目比例計算）</label>
+                                <!-- <div class="form__radio-container">
                                   <div class="form__radio-group">
                                       <input type="radio" class="form__radio-input" id="yes" value="1" v-model = "flagSurgery">
                                       <label for="yes" class="form__radio-label">
@@ -59,7 +60,7 @@
                                           無手術比例表
                                       </label>
                                   </div>
-                                </div>
+                                </div> -->
                             
                                 <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee"  :disabled="disableSurgery">
 
@@ -85,7 +86,10 @@
 
             </div>
             <div class="col-sm-6">
-            <img src="#" alt="圖片" class="form-pic">    
+              <p class="heading-3">您的醫療保險理賠額度在428個案件中保護力達85%</p>
+              <canvas id="myChart"></canvas>
+              <script src="./JS/my-chart.js"></script>
+              
             </div>
 
 

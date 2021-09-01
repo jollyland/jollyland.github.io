@@ -245,6 +245,21 @@ h1, h2, h3, h5, h4, h6,
   border-bottom: #546c84 3px solid;
 }
 
+.heading-3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: inline-block;
+  color: #4c8091;
+  letter-spacing: 1px;
+  padding: 0rem;
+  margin: 4rem 0  2rem 0;
+}
+
+.heading-3 span {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
 .form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -521,5 +536,16 @@ h1, h2, h3, h5, h4, h6,
           transform: translateY(0px);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#myChart {
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

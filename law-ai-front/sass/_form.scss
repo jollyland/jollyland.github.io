@@ -18,7 +18,20 @@
 }
 
 
+.heading-3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: inline-block;
+    color:$color-primary;
+    letter-spacing: 1px;
+    padding: 0rem;
+    margin:4rem 0  2rem 0;
+    span{
+        font-size: 2rem;
+        font-weight: 900;
+    }
 
+}
 
 
 .form {

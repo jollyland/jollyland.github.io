@@ -3,9 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet"> -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">      
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=PT+Sans&display=swap" rel="stylesheet">
@@ -34,7 +32,21 @@
             </a>
         </div>
         <div class="sidebar">
-            
+                <a href="#header" class="nav__btn">
+                    <span class="icon-user"></span>
+                </a>
+    
+                <a href="#skill" class="nav__btn">
+                    <span class="icon-activity"></span>
+                </a>
+                
+                <a href="#project" class="nav__btn">
+                    <span class="icon-folder"></span>
+                </a>
+                
+                <a href="#experience" class="nav__btn">
+                    <span class="icon-layers"></span>
+                </a>
         </div>
         
         <header class="header" id="header">
@@ -46,13 +58,13 @@
                         <span class="header__icon icon-mail"></span>
                         <span class="header__link--mail">106703034@mail2.nccu.tw</span>
                     </a>
-                    <a href="#" class="header__link">
+                    <a href="https://github.com/jollyland" class="header__link">
                         <span class="header__icon icon-github"></span>
                         <span class="header__link--github">jollyland</span>
                     </a>    
                 </div>
                 <p class="header__intro">
-                我是就讀國立政治大學資訊科學系四年級的林姿彤，在學期間多方嘗試，熟稔程式知識以及美編技巧，勇於嘗試各項數位內容技術並熱愛學習新知。
+                畢業於國立政治大學資訊科學系，在學期間多方嘗試參與各項活動及小型專案製作，熟稔程式知識以及美編技巧，勇於嘗試多項數位內容技術，熱愛鑽研前端技術，期許自己能提升網頁端的使用經驗並讓使用者迅速確實的獲得資訊。
             </p>
             </div>
             
@@ -120,134 +132,327 @@
 
         <section class="projects" id="project">
             <h3 class="heading-2 projects__heading">作品 | Projects</h3>
-            
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="https://github.com/jollyland/sat-react-app" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="https://jollyland.github.io/sat-react-app/" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">Vue 電商網站</h3>
+                        <div class="work__intro">
+                            使用Unity從0打造一款具心理測驗、角色製作、音樂節奏等多元素的短篇RPG遊戲。透過Arduino串接實體裝置，復古的遊戲控制器提升遊玩手感，並使用React以及WebGL發布線上版本。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Vue3</span>                         
+                            <span class="work__tool--tag">Vue Cli</span>                         
+                            <span class="work__tool--tag">scss</span>                         
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="https://github.com/jollyland/sat-react-app" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="https://jollyland.github.io/sat-react-app/" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">See A Trait</h3>
+                        <div class="work__intro">
+                            使用Unity從0打造一款具心理測驗、角色製作、音樂節奏等多元素的短篇RPG遊戲。透過Arduino串接實體裝置，復古的遊戲控制器提升遊玩手感，並使用React以及WebGL發布線上版本。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Unity</span>                         
+                            <span class="work__tool--tag">Arduino</span>                         
+                            <span class="work__tool--tag">Unity 2D Animation</span>                         
+                            <span class="work__tool--tag">React</span>                         
+                            <span class="work__tool--tag">WebGL</span>                         
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="#" class="work__tab work__tab--code">
+                        <!-- 還沒有放gitㄛ！ -->
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="http://www.cs.nccu.edu.tw/~s10613/Sites/NCCU_News/" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">「窮」頂之外，「貧」什麼？</h3>
+                        <div class="work__intro">與政大新聞系大學報合作，使用d3.js製作動態圖表並輔以簡易問答小遊戲，配合專題報導架設互動式議題網頁，提升讀者的閱讀體驗，並深入了解相關議題。</div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Vue</span>
+                            <span class="work__tool--tag">d3.js</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="https://github.com/fanxuanliao/JuSteat" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="https://fanxuanliao.github.io/JuSteat/public/" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">JuSteat</h3>
+                        <div class="work__intro">
+                            製作多關網頁遊戲，透過遊戲過程模擬時最熱門的外送美食產業。使用node.js架設網站，並輔以P5.js製作出動畫效果。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">node.js</span>
+                            <span class="work__tool--tag">P5.js</span>                            
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="https://github.com/jollyland/DBMS_final" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">大學生77</h3>
+                        <div class="work__intro">
+                            蒐羅歷屆大學學測、指考成績資料，使用PostgreSQL建立資料庫，並利用Django串接、架設全端網站，供使用者自訂不同搜尋條件查詢，交叉比較各校系成績不同，順利找到自己的志願。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">PostgreSQL</span>
+                            <span class="work__tool--tag">Django</span>                            
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="img/me.jpg" alt="" class="work__img">
-                    <h3 class="work__title heading-3">作品名</h3>
-                    <div class="work__links">
-                        <a href="#" class="work__link work__link--git">
-                            <span class="icon-github"></span>
-                            <span>code</span>
-                        </a>
-                        <a href="#" class="work__link work__link--demo">
-                            <span class="icon-terminal"></span>
-                            <span>demo</span>
-                        </a>    
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
                     </div>
-                    <div class="work__intro">與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。與政大新聞系大學報合作，製作具動態圖表及小遊戲的互動式議題網頁。</div>
-                    <div class="work__tool">使用工具：</div>
+                    <a href="https://github.com/ChenPinChing/Design_Thinking_Demo" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">透過文句分析辨識文章來源</h3>
+                        <div class="work__intro">
+                            面對現今網路資訊流通迅速，假訊息傳遞也十分快速的困境，透過斷詞分析台灣、中國兩地新聞報導，深度學習訓練LSTM模型。將文章送入後端，利用訓練後的模型分辨該文章之來源，增加閱聽者的資訊。使用Django架設網頁。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">NLP</span>
+                            <span class="work__tool--tag">Python</span>                            
+                            <span class="work__tool--tag">Django</span>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
+                    </div>
+                    <a href="#" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="#" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3"></h3>
+                        <div class="work__intro">
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">node.js</span>
+                            <span class="work__tool--tag">P5.js</span>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
+                    </div>
+                    <a href="#" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="#" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">切版作品1</h3>
+                        <div class="work__intro">
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">node.js</span>
+                            <span class="work__tool--tag">P5.js</span>                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--other">
+                        <span class="icon-globe"></span>
+                        <span>Other</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=0ChZuR8zH4A" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">虛擬片場中的進階相機功能設計與應用</h3>
+                        <div class="work__intro">
+                            使用Unity所開發的VR專案。可在VR環境中擔任多重角色（導演、攝影師、剪輯師），藉此達到模擬與學習的效果。使用VRTK、Post Procesing、Cinemachine等套件，設計在VR環境中使用相機動態對焦、追蹤等進階功能。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Unity(3D)</span>
+                            <span class="work__tool--tag">VRTK</span>                            
+                            <span class="work__tool--tag">Cinemachine</span>                            
+                            <span class="work__tool--tag">PostProcessing V2</span>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--other">
+                        <span class="icon-globe"></span>
+                        <span>Other</span>
+                    </div>
+                    <a href="#" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">Motion Planner</h3>
+                        <div class="work__intro">
+                            以Python撰寫，使機器人避開障礙物並自動規畫最佳路徑。 輸入為機器人、終點、障礙物之頂點、控制點、組態等參數。使用NF1演算法建立終點的Potential Field，並使用BFS搜尋最佳路徑。GUI使用tkinter套件。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--game">
+                        <span class="icon-globe"></span>
+                        <span>Game</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=CuyzfodUGz8" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">Denouement</h3>
+                        <div class="work__intro">
+                            使用Unity開發的3D冒險解謎遊戲，玩家以第一人稱進行遊玩，挖掘故事真相。使用Fungus、Cinemachine等套件。
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">Unidy(3D)</span>
+                            <span class="work__tool--tag">Cinemachine</span>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-wrap">
+                    <div href="#" class="work__tab work__tab--web">
+                        <span class="icon-globe"></span>
+                        <span>Web</span>
+                    </div>
+                    <a href="#" class="work__tab work__tab--code">
+                        <span class="icon-github"></span>
+                        <span>code</span>
+                    </a>
+                    <a href="#" class="work__tab work__tab--demo">
+                        <span class="icon-terminal"></span>
+                        <span>demo</span>
+                    </a>
+                    <div class="work">
+                        <img src="img/me.jpg" alt="" class="work__img">
+                        <h3 class="work__title heading-3">切版作品1</h3>
+                        <div class="work__intro">
+                        </div>
+                        <div class="work__tool">
+                            <span class="work__tool--tag">node.js</span>
+                            <span class="work__tool--tag">P5.js</span>                            
+                        </div>
+                    </div>
                 </div>
         </section>
 
         <section class="experience" id="experience">
             <h3 class="heading-2 heading-2--dark">社團經歷 | Activities</h3>
-            <div class="experience__list">
-
-                <div class="experience__details">
-                    <img src="img/me.jpg" alt="" class="experience__img">
-                    <h4 class="heading-3 experience__title">NCCU DSC 政大開發者社群</h4>
-                    <p class="experience__intro">NCCU DSC政大學生開發者社團與Google Developers合作，在校內建立互助自學的程式社群。在社團中擔任幹部，除了擔綱社課內容外也帶領組員一齊完成一項學期專案。</p>
+            
+            <div class="experience__timeline">
+                <div class="experience__tlitem" date-is="2018. 02 - 2020. 06">
+                    <h1 class="experience__tltitle">CIEE Culture Ambassador</h1>
+                    <p class="experience__tltext">
+                        CIEE文化大使協助來政大交換的美國學生認識台灣文化，透過舉辦field trip、workshop等活動，讓他們認識台灣文化。在社團中與不同文化背景的學生交流，不僅琢磨了英文口說能力，也開拓對不同國家文化的視野。
+                    </p>
                 </div>
-
-                <div class="experience__details">
-                    <img src="img/me.jpg" alt="" class="experience__img">
-                    <h4 class="heading-3 experience__title">CIEE文化大使</h4>
-                    <p class="experience__intro">CIEE文化大使協助來政大交換的美國學生認識台灣文化，透過舉辦field trip、workshop等活動，讓他們認識台灣文化。在社團中與不同文化背景的學生交流，磨練了我的英文聽說能力。</p>
+                <div class="experience__tlitem" date-is="2020. 09 - 2021. 06">
+                    <h1 class="experience__tltitle">NCCU Developer Student Club 政大學生開發者社群 </h1>
+                    <p class="experience__tltext">
+                        NCCU DSC 政大學生開發者社群與Google Developers合作，在校內建立互助自學的程式社群。在社團中擔任核心幹部，除了擔綱社課內容外也帶領組員一齊完成一項學期專案。
+                    </p>
                 </div>
-
-
+                <div class="experience__tlitem" date-is="2021. 03">
+                    <h1 class="experience__tltitle">2021 Solution Challenge</h1>
+                    <p class="experience__tltext">
+                        代表政大學生開發者社群參與Google Developers所舉辦之年度競賽，邀請學生使用一個或多個Google產品或平台開發針對當地社區問題的解決方案。參賽作品使用深度學習去辨識照片中的候鳥數量，以科技去輔助候鳥的保育運動。主要負責工作內容為前端網頁製作以及串接。
+                    </p>
+                </div>
+                <div class="experience__tlitem" date-is="2021. 07 - ">
+                    <h1 class="experience__tltitle">2021 法律科技黑克松</h1>
+                    <p class="experience__tltext">
+                        競賽主旨為鼓勵參賽者以資訊科技應用於法律資料處理，以解決法律產業過去耗時費工的作業流程。參賽作品為解決消費者無法客觀評估自身保險是否可解決大部分風險之痛點，運用自然語言處理，整理建立法院判決醫療費之資料庫，方便保戶、保險業務員查詢保額與判決醫療費比較後釐清保險額度是否充足。主要負責工作內容為前端網頁製作以及串接。
+                    </p>
+                </div>
             </div>
         </section>
 
         <footer>
-            <ul class="nav">
-                <li class="nav__item"><a href="#" class="nav__link">Find</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Request</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Download</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">contact</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Submit</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Career</a></li>
-            </ul>
             <p class="copyright">
                 &copy; Copyright 2021 by jollyland.
             </p>

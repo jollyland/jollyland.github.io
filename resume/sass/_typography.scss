@@ -56,16 +56,17 @@
     background-color: $color-secondary;
     display: inline-block;
     position:relative;
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 3px 3px;
 
     &::after {
         content: "";
         position: absolute;
         top: 0;
-        left: 100%;
+        left: 99%;
         width: 100%;
+        height: 101%;
         border-bottom: 36px solid transparent;
-        border-left: 25px solid $color-secondary;
+        border-left: 28px solid $color-secondary;
 
         @media only screen and (max-width:$bp-largest) {
            display: none;
