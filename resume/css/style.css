@@ -382,7 +382,7 @@ footer {
 }
 
 .education__details {
-  width: 80%;
+  width: 90%;
   padding: 3rem 0rem 6rem 0rem;
   background-color: white;
   border-radius: 1.6rem;
@@ -639,19 +639,31 @@ footer {
   height: 0;
   border-color: transparent #F9C22E transparent transparent;
   border-style: solid;
-  border-width: 14px 14px 16px 0;
+  border-width: 15px 15px 20px 0;
+}
+
+@media only screen and (max-width: 75rem) {
+  .work__tool--tag::before {
+    border-width: 14px 14px 12px 0;
+  }
 }
 
 .work__tool--tag::after {
   content: "";
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 0;
   float: left;
   width: 4px;
   height: 4px;
   border-radius: 2px;
   background: #fff;
+}
+
+@media only screen and (max-width: 75rem) {
+  .work__tool--tag::after {
+    top: 12px;
+  }
 }
 
 .work__tab {
@@ -679,6 +691,12 @@ footer {
 @media screen and (max-width: 50rem) {
   .work__tab {
     padding: 1rem 3rem 1rem 3.5rem;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .work__tab {
+    padding: 1rem 1rem 1rem 1.5rem;
   }
 }
 
