@@ -1,4 +1,61 @@
 @charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: 微軟正黑體;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.6rem;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 1rem 0rem;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.8rem;
+}
+
+ul {
+  list-style: none;
+}
+
 #nav-main .container-border {
   border-bottom: #f3f3f3 solid 1px;
 }
@@ -29,7 +86,7 @@ header.section_header .container hr {
 header.section_header .container h4 {
   color: white;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 header.section_header #btn-cal {
@@ -49,9 +106,17 @@ header.section_header #btn-cal:hover {
 }
 
 #section_origin {
-  padding: 3rem 0;
+  padding: 6rem 0;
   background-color: #2f439d;
   color: white;
+}
+
+#section_origin h3 {
+  margin: 0 auto 3rem;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding: 1.5rem;
+  display: block;
 }
 
 #section_origin .img {
@@ -60,20 +125,21 @@ header.section_header #btn-cal:hover {
 }
 
 #section_origin h4 {
-  margin-bottom: 1rem;
   padding: 0 1rem;
 }
 
 #section_origin p {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 #section_paragraph {
-  padding: 3rem 0;
+  background-color: #222;
+  color: white;
+  padding: 6rem 0;
 }
 
 #section_paragraph p {
-  font-size: 1rem;
+  font-size: 1.6rem;
   padding-right: 2rem;
 }
 
@@ -86,27 +152,16 @@ header.section_header #btn-cal:hover {
   width: 100%;
 }
 
-#section_paragraph h5 {
-  margin-bottom: 1rem;
-}
-
 #section_info {
-  background-color: #222;
-  color: white;
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 #section_info .col-sm-7 {
   text-align: center;
 }
 
-#section_info .col-sm-7 h2 {
-  margin: 0px;
-}
-
 #section_info .col-sm-7 i {
   font-size: 30px;
-  margin-bottom: .5rem;
 }
 
 #section_info .col-sm-7 p {
@@ -114,7 +169,7 @@ header.section_header #btn-cal:hover {
 }
 
 #section_future {
-  padding: 2rem 0;
+  padding: 6rem 0;
 }
 
 #section_future img {
@@ -143,6 +198,11 @@ header.section_header #btn-cal:hover {
 
 #nav-main a:hover {
   color: #2f439d;
+}
+
+#nav-main .navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .input-page {
@@ -205,28 +265,12 @@ header.section_header #btn-cal:hover {
   background-color: #777;
 }
 
-.footer h5 {
-  margin-bottom: 1rem;
-}
-
 .footer__links {
   text-decoration: none;
 }
 
-* {
-  font-family: 微軟正黑體;
-  margin: 0px;
-  padding: 0px;
-}
-
-h1, h2, h3, h5, h4, h6,
-.h1, .h2, .h3, .h5, .h4, .h6 {
-  font-weight: 700;
-  margin: 0px;
-}
-
 .heading-secondary {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
   text-transform: uppercase;
   display: inline-block;
@@ -238,15 +282,8 @@ h1, h2, h3, h5, h4, h6,
   border-bottom: transparent 2px solid;
 }
 
-.heading-secondary:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  text-shadow: .2rem 10 20;
-  border-bottom: #546c84 3px solid;
-}
-
 .heading-3 {
-  font-size: 1.6rem;
+  font-size: 1.8em;
   font-weight: 600;
   display: inline-block;
   color: #4c8091;
@@ -268,7 +305,6 @@ h1, h2, h3, h5, h4, h6,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 1rem;
   background-color: #f8fbd7;
   border-radius: 10px;
   padding: 2rem 3rem;
@@ -315,8 +351,8 @@ h1, h2, h3, h5, h4, h6,
   display: block;
   width: 100%;
   margin-bottom: .2rem;
-  -webkit-transition: alll .2s;
-  transition: alll .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .form__input:focus {
@@ -326,17 +362,12 @@ h1, h2, h3, h5, h4, h6,
   border-bottom: 2px solid #4c8091;
 }
 
-.form__input:focus:invalid {
-  border-bottom: 2px solid #ff7b00;
-}
-
 .form__input::-webkit-input-placeholder {
   color: #777;
 }
 
 .form__label {
   font-size: 1.2rem;
-  font-weight: 1000;
   margin-bottom: .5rem;
   display: block;
   -webkit-transition: all .2s;
@@ -540,6 +571,7 @@ h1, h2, h3, h5, h4, h6,
 
 #myChart {
   width: 100%;
+  justify-items: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

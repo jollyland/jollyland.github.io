@@ -16,58 +16,40 @@
     </head>
 
     <body class="input-page">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav-main">
-            <div class="container">
-              <a class="navbar-brand" href="#">好險有買Go</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav-main">
+        <div class="container " id="nav-container">
+            <a class="navbar-brand" href="#">好險有買Go</a>
+            <div class="collapse navbar-collapse" id="">
                 <div class="navbar-nav ms-auto flex-nowrap">
-                  <a class="nav-link active" aria-current="page" href="#section_ask">緣起</a>
-                  <a class="nav-link" href="#">技術</a>
-                  <a class="nav-link" href="#">開始計算</a>
+                <a class="nav-link" href="index.html#section_origin">緣起</a>
+                <a class="nav-link" href="index.html#section_info">簡介</a>
+                <a class="nav-link" href="index.html#section_paragraph">技術</a>
                 </div>
-              </div>
             </div>
-          </nav>
+        </div>
+    </nav>
 
 
           <section id="section-form">
             <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                 <div class="book">
                     <div class="book__form">
-                        <form action="#" class="form" id="form-app">
+                        <form action="#" class="form" >
                             <div class="u-margin-bottom-bg u-margin-top-bg">
                                 <h2 class="heading-secondary">輸入您的保險保障方案</h2>
                             </div> 
                             <div class="form__group form__group--label">
                                 <label for="name" class="form__label">住院醫療手術費（有手術比例表者以最高項目比例計算）</label>
-                                <!-- <div class="form__radio-container">
-                                  <div class="form__radio-group">
-                                      <input type="radio" class="form__radio-input" id="yes" value="1" v-model = "flagSurgery">
-                                      <label for="yes" class="form__radio-label">
-                                          <span class="form__radio-button"></span>
-                                          有手術比例表
-                                      </label>
-                                  </div>
-                                  <div class="form__radio-group">
-                                      <input type="radio" class="form__radio-input" id="no" value="0" v-model = "flagSurgery" >
-                                      <label for="no" class="form__radio-label">
-                                          <span class="form__radio-button"></span>
-                                          無手術比例表
-                                      </label>
-                                  </div>
-                                </div> -->
+
                             
-                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee"  :disabled="disableSurgery">
+                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee" >
 
                             </div>
                             <div class="form__group form__group--label">
-                                <label for="email" class="form__label">住院醫療雜費</label>
-                                <input type="email" class="form__input" placeholder="最低金額" id="email" v-model.number="medicalFee" required>
+                                <label for="hos" class="form__label">住院醫療雜費</label>
+                                <input  class="form__input" placeholder="最低金額" id="hos" v-model.number="medicalFee" required>
                             </div>
                             <hr/>
                             <div class="form__group">
@@ -76,26 +58,28 @@
                             </div>
                             <div class="form__group">
                                 <input type="reset" class="btn u-margin-top-sm"></input>
-                                <button class="btn btn--green u-margin-top-sm">開始計算&rarr;</button>
+                                <button class="btn btn--green u-margin-top-sm" @click="updateChart">開始計算&rarr;</button>
 
                             </div>
+
                         </form>
                     </div>
                 </div>
-                <script src="./JS/cal.js"></script>
 
             </div>
-            <div class="col-sm-6">
-              <p class="heading-3">您的醫療保險理賠額度在428個案件中保護力達85%</p>
+            <div class="col-sm-7">
+              <p class="heading-3" v-if="result">您的醫療保險理賠額度在{{percentage}}%</p>
+
               <canvas id="myChart"></canvas>
-              <script src="./JS/my-chart.js"></script>
-              
             </div>
 
 
             </div>
             </div>
         </section>
+
+        <script src="./JS/cal.js"></script>
+
 
 
         

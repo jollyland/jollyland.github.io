@@ -38,7 +38,7 @@ header.section_header {
     background-attachment: fixed;
     text-align: center;
     color: white;
-   
+    
     .container {
         padding:12rem 0;
         
@@ -55,9 +55,9 @@ header.section_header {
         h4 {
             color: rgb(255, 255, 255);
             font-weight: 400;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
         }
-   
+    
     }
 
 
@@ -80,27 +80,36 @@ header.section_header {
 
 ////////////////
 #section_origin {
-    padding: 3rem 0;
+    padding: 6rem 0;
     background-color: $color-secondary;
     color: white;
+    h3{
+        margin: 0 auto 3rem;
+        text-align: center;
+        border-bottom: 1px solid white;
+        padding: 1.5rem;
+        display: block;
+    }
     .img{
         background-size: cover;
         height: 20rem;
     }
     h4 {
-        margin-bottom: 1rem;
         padding: 0 1rem;
     }
     p {
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
 }
 ////////////////
 
 #section_paragraph {
-    padding: 3rem 0;
+    background-color: $color-black;
+    color: white;
+
+    padding: 6rem 0;
     p {
-        font-size: 1rem;
+        font-size: 1.6rem;
         padding-right: 2rem;
     }
     .img-wrap {
@@ -110,29 +119,18 @@ header.section_header {
     img {
         width: 100%;
     }
-    h5 {
-        margin-bottom: 1rem;
-    }
 }
 
 
 ////////////////
 
 #section_info {
-    background-color: $color-black;
-    color: white;
-    padding: 5rem 0;
+    padding: 6rem 0;
 
-    .col-sm-5 {
-    }
     .col-sm-7 {
-        h2 {
-            margin: 0px;
-        }
         text-align: center;
         i {
             font-size: 30px;
-            margin-bottom: .5rem;
         }
         p {
             padding: 0 4rem;
@@ -143,7 +141,7 @@ header.section_header {
 ////////////////
 
 #section_future {
-    padding: 2rem 0;
+    padding: 6rem 0;
     img{
         width: 100%;
     }
@@ -161,13 +159,16 @@ header.section_header {
 #nav-main {
     background-color: transparent;
     transition: all .5s;
-
     a {
         color:white;
         transition: all .2s;
         &:hover {
             color: $color-secondary;
         }
+    }
+    .navbar-brand{
+        font-size: 1.6rem;
+        font-weight: 600;
     }
 
 
@@ -233,19 +234,38 @@ header.section_header {
     padding: 1rem 0;
     background-color: $color-dark-grey;
     
-    h5 {
-        margin-bottom: 1rem;
-    }
-
-    &__contest {
-        
-
-    }
     &__links {
         text-decoration: none;
     }
 
-    &__copyright {
+}
 
+
+.heading-secondary {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    color:$color-primary;
+    letter-spacing: 2px;
+    transition: all .2s;
+    margin-bottom: 1rem;
+    border-bottom: transparent 2px solid;
+
+}
+
+
+.heading-3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    display: inline-block;
+    color:$color-primary;
+    letter-spacing: 1px;
+    padding: 0rem;
+    margin:4rem 0  2rem 0;
+    span{
+        font-size: 2rem;
+        font-weight: 900;
     }
+
 }
