@@ -11,6 +11,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+        
 
         <title>好險有買go</title>
     </head>
@@ -18,7 +19,7 @@
     <body class="input-page">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav-main">
         <div class="container " id="nav-container">
-            <a class="navbar-brand" href="#">好險有買Go</a>
+            <a class="navbar-brand" href="input.html">好險有買Go</a>
             <div class="collapse navbar-collapse" id="">
                 <div class="navbar-nav ms-auto flex-nowrap">
                 <a class="nav-link" href="index.html#section_origin">緣起</a>
@@ -38,18 +39,89 @@
                     <div class="book__form">
                         <form action="#" class="form" >
                             <div class="u-margin-bottom-bg u-margin-top-bg">
-                                <h2 class="heading-secondary">輸入您的保險保障方案</h2>
+                              <div class="switch-button">
+                                <input class="switch-button-checkbox" type="checkbox" v-model="costumeInput"></input>
+                                <label class="switch-button-label" for=""><span class="switch-button-label-span">選擇保險保障方案</span></label>
+                              </div>
+                                <!-- <h2 class="heading-secondary">選擇保險保障方案</h2> -->
+                                <!-- <h2 class="heading-secondary">輸入保險保障方案</h2> -->
                             </div> 
+                            
+                            <div class="select-list " v-show="!costumeInput">
+                            <div class="form__group">
+                              <div class="select-box">
+                                <div class="select-box__current" tabindex="1">
+                                  <div class="select-box__value">
+                                    <input class="select-box__input" v-model="selectedCompany"   type="radio" id="c0" :value="companyList[0]" name="company" checked="checked"/>
+                                    <p class="select-box__input-text">{{companyList[0]}}</p>
+                                  </div>
+                                  <div class="select-box__value">
+                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c1" :value="companyList[1]" name="company"/>
+                                    <p class="select-box__input-text">{{companyList[1]}}</p>
+                                  </div>
+                                  <div class="select-box__value">
+                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c2" :value="companyList[2]" name="company"/>
+                                    <p class="select-box__input-text">{{companyList[2]}}</p>
+                                  </div>
+                                  <div class="select-box__value">
+                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c3" :value="companyList[3]" name="company"/>
+                                    <p class="select-box__input-text">{{companyList[3]}}</p>
+                                  </div>
+                                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
+                                </div>
+                                <ul class="select-box__list">
+                                  <li>
+                                    <label class="select-box__option" for="c0" aria-hidden="aria-hidden">{{companyList[0]}}</label>
+                                  </li>
+                                  <li>
+                                    <label class="select-box__option" for="c1" aria-hidden="aria-hidden">{{companyList[1]}}</label>
+                                  </li>
+                                  <li>
+                                    <label class="select-box__option" for="c2" aria-hidden="aria-hidden">{{companyList[2]}}</label>
+                                  </li>
+                                  <li>
+                                    <label class="select-box__option" for="c3" aria-hidden="aria-hidden">{{companyList[3]}}</label>
+                                  </li>
+                                </ul>
+                              </div> 
+                            </div>
+
+                            <div class="form__group">
+                              <div class="select-box">
+                                <div class="select-box__current" tabindex="0">
+                                  <div class="select-box__value">
+                                    <input class="select-box__input" type="radio"  name="projects" checked="checked"/>
+                                    <p class="select-box__input-text">請選擇方案</p>
+                                  </div>
+                                  
+                                  <div class="" v-for="(p, index) in projectList" :key="index">
+                                    <div class="select-box__value">
+                                      <input class="select-box__input" v-model="selectedProject" type="radio" :id="index" :value="index" name="projects"/>
+                                      <p class="select-box__input-text">{{p.name}} {{p.plan}}</p>
+                                    </div>
+                                  </div>
+                                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
+                                </div>
+                                <ul class="select-box__list" id="select_project_list"> 
+                                  <!-- <div class="" v-for="i in 3" :key="i">
+                                  <li>
+                                    <label class="select-box__option" :for="i" aria-hidden="aria-hidden">{{projectList[i-1].name}} {{projectList[i-1].plan}}</label>
+                                  </li>
+                                  </div> -->
+                                </ul>
+                              </div> 
+                            </div>
+                            </div>
                             <div class="form__group form__group--label">
                                 <label for="name" class="form__label">住院醫療手術費（有手術比例表者以最高項目比例計算）</label>
 
                             
-                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee" >
+                                <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee" :disabled="!costumeInput">
 
                             </div>
                             <div class="form__group form__group--label">
                                 <label for="hos" class="form__label">住院醫療雜費</label>
-                                <input  class="form__input" placeholder="最低金額" id="hos" v-model.number="medicalFee" required>
+                                <input  class="form__input" placeholder="最低金額" id="hos" v-model.number="medicalFee" :disabled="!costumeInput">
                             </div>
                             <hr/>
                             <div class="form__group">
@@ -68,7 +140,7 @@
 
             </div>
             <div class="col-sm-7">
-              <p class="heading-3" v-if="result">您的醫療保險理賠額度在{{count}}個案件中，保護力達{{percentage}}%</p>
+              <!-- <p class="heading-3" v-if="result">您的醫療保險理賠額度在{{count}}個案件中，保護力達{{percentage}}%</p> -->
 
               <canvas id="myChart"></canvas>
             </div>
@@ -81,7 +153,7 @@
 
 
 
-        
+<!--         
         <section id="section_info">
             <div class="container">
                 <div class="row">
@@ -97,7 +169,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <!-- Footer -->
@@ -149,6 +221,7 @@
         </footer>
 
     </body>
-    <script src="./JS/cal.js"></script>
+    <!-- <script src="./JS/cal.js"></script> -->
+    <script src="./JS/my-chart.js"></script>
 
 </html>

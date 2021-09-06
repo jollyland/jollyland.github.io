@@ -108,7 +108,6 @@ const Form_App = {
                 for(i=0; i<g; i++){
                     c += this.cases[i]
                 }
-            console.log(c)
 
                 i=0
                 while(this.total > this.arrange_data[g][i]){
