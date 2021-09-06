@@ -5,7 +5,6 @@ const Form_App = {
             medicalFee: 90000,
             total: 250000,
             count: 0,
-            group:0,
             costumeInput:false,
             percentage:0,
             range_count:[],
@@ -17,7 +16,8 @@ const Form_App = {
             selectedCompany:'',
             companyList:['台灣人壽', '元大人壽', '新光人壽','全球人壽'],
             projectList:[],
-            selectedProject:0
+            selectedProject:0,
+            result: false
         };
     },
     methods: {
@@ -127,14 +127,15 @@ const Form_App = {
             axios.get(apiUrl)
             .then((res) => {
                 // 取得遠端資料
-                this.afforded = this.count - res.data.data.count
+                this.afforded = this.count - res.data.data.count        
+                this.result = true;
+                this.percentage = (this.afforded/this.count*100).toFixed(2)
                 console.log(this.count, "-", res.data.data.count,'=',this.afforded)
                 this.addData(this.myChart, this.afforded)
             })
             .catch((err) => {
                 console.log(err.response);
             })
-
         },
 
         //更新圖表上的資料

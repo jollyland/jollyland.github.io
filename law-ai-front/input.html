@@ -19,13 +19,14 @@
     <body class="input-page">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav-main">
         <div class="container " id="nav-container">
-            <a class="navbar-brand" href="input.html">好險有買Go</a>
+            <a class="navbar-brand" href="index.html">好險有買Go</a>
             <div class="collapse navbar-collapse" id="">
                 <div class="navbar-nav ms-auto flex-nowrap">
                 <a class="nav-link" href="index.html#section_origin">緣起</a>
                 <a class="nav-link" href="index.html#section_info">簡介</a>
                 <a class="nav-link" href="index.html#section_paragraph">技術</a>
-                </div>
+                <a class="nav-link" href="compensate.html">計算汽機車責任保險</a>
+              </div>
             </div>
         </div>
     </nav>
@@ -140,7 +141,7 @@
 
             </div>
             <div class="col-sm-7">
-              <!-- <p class="heading-3" v-if="result">您的醫療保險理賠額度在{{count}}個案件中，保護力達{{percentage}}%</p> -->
+              <p class="heading-3 result_info" v-if="result">您的醫療保險理賠額度在{{count}}個案件中，<br>保護力達 <span>{{percentage}}</span> %</p>
 
               <canvas id="myChart"></canvas>
             </div>

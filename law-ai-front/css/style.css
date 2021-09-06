@@ -279,18 +279,42 @@ header.section_header #btn-cal:hover {
 }
 
 .heading-3 {
-  font-size: 1.8em;
+  font-size: 3rem;
   font-weight: 600;
   display: inline-block;
   color: #4c8091;
   letter-spacing: 1px;
   padding: 0rem;
-  margin: 4rem 0  2rem 0;
+  margin: 2rem 4rem;
 }
 
 .heading-3 span {
-  font-size: 2rem;
+  font-size: 3.6rem;
   font-weight: 900;
+}
+
+#section-compensate {
+  background-color: #73adbd;
+  padding-top: 8rem;
+  padding-bottom: 16rem;
+}
+
+#section-compensate hr {
+  max-width: 100%;
+  margin: 2rem 1rem;
+  border: 3px solid #4c8091;
+}
+
+#section-compensate i {
+  font-size: 30px;
+}
+
+#section-compensate .feature {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+#section-compensate .heading-3 {
+  color: #eee;
 }
 
 .form {

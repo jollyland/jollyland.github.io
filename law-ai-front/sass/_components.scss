@@ -15,6 +15,7 @@ $color-sky: rgb(115,173,189);
 
 $color-light-orange:#ffb900;
 $color-heavy-orange:#ff7b00;
+$color-heavy-red:#ff2600;
 
 //font
 $default-font-size: 1.6rem;
@@ -197,6 +198,8 @@ header.section_header {
     padding-top: 8rem;
     padding-bottom: 16rem;
     // height: 80vh;
+
+
     hr {
         max-width: 100%;
         margin:2rem 1rem;
@@ -254,16 +257,44 @@ header.section_header {
 
 
 .heading-3 {
-    font-size: 1.8em;
+    font-size: 3rem;
     font-weight: 600;
     display: inline-block;
     color:$color-primary;
     letter-spacing: 1px;
     padding: 0rem;
-    margin:4rem 0  2rem 0;
+    margin:2rem 4rem;
     span{
-        font-size: 2rem;
+        font-size: 3.6rem;
         font-weight: 900;
     }
 
+}
+
+
+#section-compensate {
+
+    background-color : $color-sky;
+    padding-top: 8rem;
+    padding-bottom: 16rem;
+    // height: 80vh;
+
+    
+    hr {
+        max-width: 100%;
+        margin:2rem 1rem;
+        border: 3px solid $color-primary;
+    }
+
+    i {
+        font-size: 30px;
+    }
+    .feature {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+
+    .heading-3 {
+        color:$color-white;
+
+    }
 }
