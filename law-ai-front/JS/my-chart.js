@@ -1,9 +1,9 @@
 const Form_App = {
     data() {
         return {
-            surgeryFee: 160000,
-            medicalFee: 90000,
-            total: 250000,
+            surgeryFee: 0,
+            medicalFee: 0,
+            total: 0,
             count: 0,
             costumeInput:false,
             percentage:0,
@@ -14,10 +14,11 @@ const Form_App = {
             afforded:0,
             myChart:{},
             selectedCompany:'',
-            companyList:['台灣人壽', '元大人壽', '新光人壽','全球人壽'],
+            companyList:['台灣人壽', '元大人壽', '遠雄人壽','全球人壽'],
             projectList:[],
-            selectedProject:0,
-            result: false
+            selectedProject:'',
+            result: false,
+            p_index: 0
         };
     },
     methods: {
@@ -51,6 +52,12 @@ const Form_App = {
         },
 
         addProjectList(){
+            var temp = this.projectList.splice(11)
+            console.log(temp)
+            // this.projectList[10] = this.projectList[11]
+            // this.projectList[11] = temp
+            this.projectList.splice(9,0,temp[0])
+            console.log(this.projectList)
         },
 
         //組距
@@ -200,73 +207,106 @@ const Form_App = {
 
             this.surgeryFee = 0
             this.medicalFee = 0 
-            
-            var list = document.getElementById('select_project_list');
-            list.innerHTML = ""
-            var labelText
-            var i
-            console.log(this.projectList[0])
+            if(this.selectedProject)
+                this.selectedCompany = ''
             switch(this.selectedCompany){
                 case this.companyList[0]:
-                    for(i=0; i<3; i++){
-                        var li = document.createElement('li');
-                        var label = document.createElement('label')
-                        label.setAttribute("class", "select-box__option")
-                        label.setAttribute("aria-hidden", "aria-hidden")
-                        label.setAttribute("for", i)
-                        li.appendChild(label)
-                        labelText = document.createTextNode(this.projectList[i].name + " " + this.projectList[i].plan)
-                        label.appendChild(labelText)
-                        list.appendChild(li)
-                    }
+                    this.p_index = 0
                     break;
                 case this.companyList[1]:
-                    for(i=3; i<6; i++){
-                        var li = document.createElement('li');
-                        var label = document.createElement('label')
-                        label.setAttribute("class", "select-box__option")
-                        label.setAttribute("aria-hidden", "aria-hidden")
-                        label.setAttribute("for", i)
-                        li.appendChild(label)
-                        labelText = document.createTextNode(this.projectList[i].name + " " + this.projectList[i].plan)
-                        label.appendChild(labelText)
-                        list.appendChild(li)
-                    }
+                    this.p_index = 3
+
                     break;
                 case this.companyList[2]:
-                    for(i=6; i<9; i++){
-                        var li = document.createElement('li');
-                        var label = document.createElement('label')
-                        label.setAttribute("class", "select-box__option")
-                        label.setAttribute("aria-hidden", "aria-hidden")
-                        label.setAttribute("for", i)
-                        li.appendChild(label)
-                        labelText = document.createTextNode(this.projectList[i].name + " " + this.projectList[i].plan)
-                        label.appendChild(labelText)
-                        list.appendChild(li)
-                    }
+                    this.p_index = 6
+
                     break;
                 case this.companyList[3]:
-                    for(i=9; i<12; i++){
-                        var li = document.createElement('li');
-                        var label = document.createElement('label')
-                        label.setAttribute("class", "select-box__option")
-                        label.setAttribute("aria-hidden", "aria-hidden")
-                        label.setAttribute("for", i)
-                        li.appendChild(label)
-                        labelText = document.createTextNode(this.projectList[i].name + " " + this.projectList[i].plan)
-                        label.appendChild(labelText)
-                        list.appendChild(li)
-                    }
+                    this.p_index = 9
+
                     break;
             }
         },
         
 
         setInsurance(){
-            var index = this.selectedProject
-            this.medicalFee = this.projectList[index].miscellaneous_charge
-            this.surgeryFee = this.projectList[index].surgery_fee
+            console.log(this.selectedProject)
+            var index
+            switch(this.selectedProject){
+                case this.projectList[0].name+this.projectList[0].plan:
+                    index = 0;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                    break
+                case this.projectList[1].name+this.projectList[1].plan:
+                    index = 1;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                    break
+                case this.projectList[2].name+this.projectList[2].plan:
+                    index = 2;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[3].name+this.projectList[3].plan:
+                    index = 3;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[4].name+this.projectList[4].plan:
+                    index = 4;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[5].name+this.projectList[5].plan:
+                    index = 5;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[6].name+this.projectList[6].plan:
+                    index = 6;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[7].name+this.projectList[7].plan:
+                    index = 7;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[8].name+this.projectList[8].plan:
+                    index = 8;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[9].name+this.projectList[9].plan:
+                    index = 9;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[10].name+this.projectList[10].plan:
+                    index = 10;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+                case this.projectList[11].name+this.projectList[11].plan:
+                    index = 11;
+                    this.medicalFee = this.projectList[index].miscellaneous_charge
+                    this.surgeryFee = this.projectList[index].surgery_fee
+                
+                    break
+
+            }
+
+            
             
         },
     },

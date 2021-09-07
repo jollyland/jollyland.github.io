@@ -180,7 +180,9 @@ const Form_App = {
 
 
     watch: {
-
+        selectedProject(){
+            console.log(this.selectedProject)
+        }
     },
 
     created() {

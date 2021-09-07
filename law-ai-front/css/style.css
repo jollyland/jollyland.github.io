@@ -206,11 +206,11 @@ header.section_header #btn-cal:hover {
 }
 
 .input-page {
-  max-height: 100%;
+  height: 100%;
+  background-color: #a9dada;
 }
 
 .input-page #section_info {
-  background-color: #eee;
   color: black;
 }
 
@@ -218,10 +218,14 @@ header.section_header #btn-cal:hover {
   padding: 0 3rem;
 }
 
+.input-page__comp {
+  background-color: #73adbd;
+}
+
 #section-form {
   background-color: #a9dada;
   padding-top: 8rem;
-  padding-bottom: 16rem;
+  padding-bottom: 8rem;
 }
 
 #section-form hr {

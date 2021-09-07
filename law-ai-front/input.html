@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="insspage">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,81 +44,26 @@
                                 <input class="switch-button-checkbox" type="checkbox" v-model="costumeInput"></input>
                                 <label class="switch-button-label" for=""><span class="switch-button-label-span">選擇保險保障方案</span></label>
                               </div>
-                                <!-- <h2 class="heading-secondary">選擇保險保障方案</h2> -->
-                                <!-- <h2 class="heading-secondary">輸入保險保障方案</h2> -->
                             </div> 
                             
                             <div class="select-list " v-show="!costumeInput">
                             <div class="form__group">
-                              <div class="select-box">
-                                <div class="select-box__current" tabindex="1">
-                                  <div class="select-box__value">
-                                    <input class="select-box__input" v-model="selectedCompany"   type="radio" id="c0" :value="companyList[0]" name="company" checked="checked"/>
-                                    <p class="select-box__input-text">{{companyList[0]}}</p>
-                                  </div>
-                                  <div class="select-box__value">
-                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c1" :value="companyList[1]" name="company"/>
-                                    <p class="select-box__input-text">{{companyList[1]}}</p>
-                                  </div>
-                                  <div class="select-box__value">
-                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c2" :value="companyList[2]" name="company"/>
-                                    <p class="select-box__input-text">{{companyList[2]}}</p>
-                                  </div>
-                                  <div class="select-box__value">
-                                    <input class="select-box__input" v-model="selectedCompany"  type="radio" id="c3" :value="companyList[3]" name="company"/>
-                                    <p class="select-box__input-text">{{companyList[3]}}</p>
-                                  </div>
-                                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
-                                </div>
-                                <ul class="select-box__list">
-                                  <li>
-                                    <label class="select-box__option" for="c0" aria-hidden="aria-hidden">{{companyList[0]}}</label>
-                                  </li>
-                                  <li>
-                                    <label class="select-box__option" for="c1" aria-hidden="aria-hidden">{{companyList[1]}}</label>
-                                  </li>
-                                  <li>
-                                    <label class="select-box__option" for="c2" aria-hidden="aria-hidden">{{companyList[2]}}</label>
-                                  </li>
-                                  <li>
-                                    <label class="select-box__option" for="c3" aria-hidden="aria-hidden">{{companyList[3]}}</label>
-                                  </li>
-                                </ul>
-                              </div> 
+                              <input class="form-control form__conmpany" v-model="selectedCompany" list="companylist"  placeholder="選擇保險公司">
+                              <datalist id="companylist">
+                                <option v-for="c in companyList" :value="c">{{c}}</option>
+                              </datalist>
                             </div>
-
-                            <div class="form__group">
-                              <div class="select-box">
-                                <div class="select-box__current" tabindex="0">
-                                  <div class="select-box__value">
-                                    <input class="select-box__input" type="radio"  name="projects" checked="checked"/>
-                                    <p class="select-box__input-text">請選擇方案</p>
-                                  </div>
-                                  
-                                  <div class="" v-for="(p, index) in projectList" :key="index">
-                                    <div class="select-box__value">
-                                      <input class="select-box__input" v-model="selectedProject" type="radio" :id="index" :value="index" name="projects"/>
-                                      <p class="select-box__input-text">{{p.name}} {{p.plan}}</p>
-                                    </div>
-                                  </div>
-                                  <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
-                                </div>
-                                <ul class="select-box__list" id="select_project_list"> 
-                                  <!-- <div class="" v-for="i in 3" :key="i">
-                                  <li>
-                                    <label class="select-box__option" :for="i" aria-hidden="aria-hidden">{{projectList[i-1].name}} {{projectList[i-1].plan}}</label>
-                                  </li>
-                                  </div> -->
-                                </ul>
-                              </div> 
+                            <div class="form__group" v-if="selectedCompany">
+                              <input class="form-control form__plan" v-model="selectedProject" list="pjlist"  placeholder="選擇保險方案">
+                              <datalist id="pjlist">
+                                <option v-for="key in 3" :value="projectList[p_index+key-1].name + projectList[p_index+key-1].plan" >{{projectList[p_index+key-1].name + projectList[p_index+key-1].plan}}</option>
+                              </datalist>
                             </div>
                             </div>
                             <div class="form__group form__group--label">
                                 <label for="name" class="form__label">住院醫療手術費（有手術比例表者以最高項目比例計算）</label>
-
                             
                                 <input type="text" class="form__input" placeholder="輸入最高理賠金額" id="name" v-model.number="surgeryFee" :disabled="!costumeInput">
-
                             </div>
                             <div class="form__group form__group--label">
                                 <label for="hos" class="form__label">住院醫療雜費</label>
@@ -151,35 +96,9 @@
             </div>
         </section>
 
-
-
-
-<!--         
-        <section id="section_info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 form-explaination">
-                          <h2 class="heading-secondary">解釋要填甚麼</h2>
-                                <p>
-                                話雖如此，我們卻也不能夠這麼篤定。對法律進行深入研究，在現今時代已經無法避免了。法律對我來說有著舉足輕重的地位，必須要嚴肅認真的看待。探討法律時，如果發現非常複雜，那麼想必不簡單。張賢亮說過一句經典的名言，能夠白首偕老的夫妻，大概就是能夠掌握適度感情的夫妻。這段話可說是震撼了我。
-                                </p>
-                                <p>
-                                    生活中，若人工智慧出現了，我們就不得不考慮它出現了的事實。人工智慧勢必能夠左右未來。問題的核心究竟是什麼？而這些並不是完全重要，更加重要的問題是，我認為，世界需要改革，需要對人工智慧有新的認知。卡耐基曾講過，我們若已接受最壞的，就再沒有什麼損失。希望大家能發現話中之話。總結來說，這必定是個前衛大膽的想法。我們普遍認為，若能理解透徹核心原理，對其就有了一定的了解程度。總而言之，人工智慧絕對是史無前例的。話雖如此，富蘭克林說過，對上司謙遜，是一種責任; 對同事謙遜，是一種禮遇; 對部屬謙遜，是一種尊貴。想必各位已經看出了其中的端倪。
-                                </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-        <!-- Footer -->
-        <footer class="bg-dark text-white footer">
-          <!-- Grid container -->
+        <!-- <footer class="bg-dark text-white footer">
           <div class="container p-4">
-            <!--Grid row-->
             <div class="row">
-              <!--Grid column-->
               <div class="col-lg-6 col-md-12 footer__contest">
                 <h5 class="text-uppercase ">法律科技黑客松2021</h5>
                 <p>
@@ -187,7 +106,6 @@
                 </p>
               </div>
               <div class="col-lg-3 col-md-6">
-                <!-- 空白 -->
               </div>
               <div class="col-lg-3 col-md-6 footer__links">
                 <h5 class="text-uppercase">Links</h5>
@@ -207,19 +125,14 @@
                   </li>
                 </ul>
               </div>
-              <!--Grid column-->
             </div>
-            <!--Grid row-->
           </div>
-          <!-- Grid container -->
 
-          <!-- Copyright -->
           <div class="text-center p-3 footer__copyright">
             &copy; 2021 Copyright 
             <a class="text-white" href="#">好險有買Go</a>
           </div>
-          <!-- Copyright -->
-        </footer>
+        </footer> -->
 
     </body>
     <!-- <script src="./JS/cal.js"></script> -->
